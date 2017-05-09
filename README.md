@@ -1,2 +1,7 @@
 # VideoAppTest
 VideoAppTest
+
+
+```
+	> npm start
+```
