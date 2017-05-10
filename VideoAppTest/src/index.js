@@ -26,14 +26,14 @@ class App extends Component {
 	SelectedItem: null
 	}
 	
-	this.contentSearch('Movies');
+	this.contentSearch('Top Movies');
 	
 }
 
 // Content Search  function
 contentSearch(term) {
 	
-	YTSearch({key: API_KEY, term: term}, (data) => {
+	YTSearch({key: API_KEY, term: term, maxResults: 8}, (data) => {
 			this.setState(
 			{SearchResults: data,
 			SelectedItem: data[0]
@@ -51,7 +51,7 @@ contentSearch(term) {
 	return (
 	<div> 
 		<SeachBar onSearchTermChange={contentSearch} />
-		<h1>Videos To Watch</h1>
+		<h1>Videos To Watch</h1><h4>(Click below view video) </h4>
 		<ContentList 
 		onItemSelect={SelectedItem => this.setState({SelectedItem}) }
 		SearchResults={this.state.SearchResults} />
