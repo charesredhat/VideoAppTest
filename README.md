@@ -41,7 +41,7 @@ And then run
 ```
 	> npm start
 ```
-The following you should see the follow output.
+The you should see the follow output.
 
 ```
 redha_000@ChStrittechPC MINGW64 /d/Projects/VideoAppTest/VideoAppTest (master)
