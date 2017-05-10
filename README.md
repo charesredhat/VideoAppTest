@@ -25,7 +25,7 @@ After the above dependencies installed to download the VideoApptest code run the
 
 
 ```
-	> git clone 
+	> git clone https://github.com/charesredhat/VideoAppTest.git
 ```
 
 Once the repository has been downloaded there will be a directory called VideoApptest cd into 
