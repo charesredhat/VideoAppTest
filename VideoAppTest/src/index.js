@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
+import { Router, Route, Link, browserHistory, IndexRoute  } from 'react-router'
 
 //App classes and src
 import SeachBar from './components/search_bar';
@@ -15,7 +16,7 @@ const API_KEY = 'AIzaSyAi0FrqaKo15nn5tAIgpBUAFe5LuIQbL8w';
 
 // Create new Component Should produce some HTML
 
-class App extends Component {
+class MainApp extends Component {
 	
 	
 	constructor(props) {
@@ -56,13 +57,51 @@ contentSearch(term) {
 		onItemSelect={SelectedItem => this.setState({SelectedItem}) }
 		SearchResults={this.state.SearchResults} />
 		<ContentListItemDetail item={this.state.SelectedItem} />
-		<h1>My Seleted Video History</h1>
 		<Selectedhistory item={this.state.SelectedItem}  />
+		
 	</div>
 	);
 	}
 }
 
+/**/
+class MainMenu extends React.Component {
+   render() {
+      return (
+         <div >
+            <div className="topnav">
+               <div className="leftnav"><a href="/home">Home</a></div>
+               <div className="rightnav"><a href="/history">Selected Video History</a></div>
+            </div>
+				
+           {this.props.children}
+         </div>
+      )
+   }
+}
+
+
+class History extends React.Component {
+   render() {
+      return (
+         <div>
+           <Selectedhistory   />
+         </div>
+      )
+   }
+}
+
+
+
+
 // Take components put in the Dom
 
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(
+ <Router history = {browserHistory}>
+      <Route path = "/" component = {MainMenu}>
+         <IndexRoute component = {MainApp} />
+         <Route path = "home" component = {MainApp} />
+         <Route path = "history" component = {History} />
+      </Route>
+   </Router>
+, document.querySelector('.container'));

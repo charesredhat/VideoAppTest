@@ -1,4 +1,24 @@
 
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
 h1 {
 padding: 5px;	
 	
@@ -14,6 +34,15 @@ padding: 5px;
 		float:left;
 		position:relative;
 		margin-left:-5px;
+}
+.topnav
+{
+
+	text-align: center;
+	  background-color: grey;
+	 padding: 10px, 15px,10px,10px,;
+	 height: 50px;
+	 font-size: 20px;
 }
 
 .search-bar {
@@ -84,7 +113,6 @@ padding: 5px;
 		
 	max-width: 1680px!important;
 	height:240px;
-	overflow-y:auto;
 }
 
 .media-heading {
@@ -96,7 +124,7 @@ padding: 5px;
 .list-group-history {
 	max-width: 1680px!important;
 	height:140px;
-     overflow-y:auto;
+     
 	
 }
 
@@ -104,4 +132,14 @@ padding: 5px;
 	
 	width: 75%;
 	
+}
+
+.leftnav {
+	float: left;
+	padding: 10px;
+}
+
+.rightnav {
+	float: left;
+	padding: 10px;
 }

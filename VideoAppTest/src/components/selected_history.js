@@ -45,6 +45,8 @@ class Selectedhistory    extends Component {
    componentWillReceiveProps(nextProps){
 	    
 	  this.state.countpageload++
+
+	  
 	  if(this.state.countpageload != 1)
 	  {
 		   console.log(" this.state.countpageload != 1 " + this.state.countpageload); 
@@ -53,7 +55,7 @@ class Selectedhistory    extends Component {
 		  description: nextProps.item.snippet.description });
 	  
 	  }
-      console.log(this.state.data); //you can log data from props here to check
+      console.log(this.state.data + ' test '); //you can log data from props here to check
 	
 	  
   }
@@ -88,9 +90,14 @@ class Selectedhistory    extends Component {
 	render() {
 	
 	
-	   
-		return (
+		if (this.props.item) {
+      return (
+        <div></div>
+      );
+    } else {
+      return (
 		<div>
+		   <h1>Selected Video History</h1>
 			 <ul className="col-md-2 list-group-history">
 			 {this.state.data.map((row, index) => (	 
 			 <li className="list-group-item"> 
@@ -112,6 +119,8 @@ class Selectedhistory    extends Component {
 
     </div>
 	);
+    }
+	
 	}
 
 }
