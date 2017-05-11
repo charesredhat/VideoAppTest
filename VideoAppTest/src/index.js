@@ -1,3 +1,10 @@
+
+//VideoTestApp
+//Auther Charles T Strittmatter
+//
+// simple reactjs app that doemstratus the uses of reactjs, Youtube video Api and firebase
+//
+// main module imports
 import _ from 'lodash';
 import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
@@ -52,7 +59,7 @@ contentSearch(term) {
 	return (
 	<div> 
 		<SeachBar onSearchTermChange={contentSearch} />
-		<h1>Videos To Watch</h1><h4>(Click below view video) </h4>
+		<h1>Videos To Watch</h1><h5>(Click below to view and play video) </h5>
 		<ContentList 
 		onItemSelect={SelectedItem => this.setState({SelectedItem}) }
 		SearchResults={this.state.SearchResults} />
@@ -64,7 +71,11 @@ contentSearch(term) {
 	}
 }
 
-/**/
+/* 
+
+Displayes Main menu for route Navigation
+
+ */
 class MainMenu extends React.Component {
    render() {
       return (
@@ -94,7 +105,8 @@ class History extends React.Component {
 
 
 
-// Take components put in the Dom
+// Take components put in the Dom also holds main routing code
+// future imporvement move route into seperte route component
 
 ReactDOM.render(
  <Router history = {browserHistory}>
