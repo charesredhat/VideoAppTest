@@ -22,9 +22,10 @@ const ContentListItemDetail = ({item}) => {
 	
 	<div className="video-detail col-md-12"> 
 	<div className="details">
-		  <h5> {videoId} {url}</h5>
+		  
 		 <h5> {item.snippet.title}</h5>
 		 <h5> {item.snippet.desciption}</h5>
+		 <h5>  {url}</h5>
 		</div>
 		<div className="embed-responsive embed-responsive-16by9">
 			  <iframe className="embed-responsive-item" src={url} allowFullScreen></iframe>

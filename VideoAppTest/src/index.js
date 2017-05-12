@@ -52,7 +52,7 @@ contentSearch(term) {
 	return (
 	<div> 
 		<SeachBar onSearchTermChange={contentSearch} />
-		<h1>Videos To Watch</h1><h4>(Click below view video) </h4>
+		<div className="topnav Black-background"> <h2>Videos To Watch   ( Click below to view and play video. ) </h2></div>
 		<ContentList 
 		onItemSelect={SelectedItem => this.setState({SelectedItem}) }
 		SearchResults={this.state.SearchResults} />
